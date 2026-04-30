@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eaeaea, #cfd9df);
+    margin: 0;
+}
+/* Main container */
+.container {
+    max-width: 800px;
+    background: white;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Headings */
+h1 {
+    color: #222;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #444;
+    margin-top: 30px;
+}
+
+/* Text */
+p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Divider */
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #444;
+    text-decoration: none;
+}
+
+.project-card {
+    background-color: #f8f8f8;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 18px;
+    border: 1px solid #ddd;
+}
+.project-card h3 {
+    margin-top: 0;
+    color: #222;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 15px 40px;
+}
+
+.navbar div {
+    display: flex;
+    gap: 20px;
+}
+.navbar h2{
+margin 0;color:white;font-weight:bold;letter-spacing:1px;}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills span {
+    background-color: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #555;
+}
+
+footer p {
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* Makes sizing easier to control */
+* {
+    box-sizing: border-box;
+}
+
+/* Better navbar hover effect */
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+/* Button hover animation */
+.button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+/* Project card hover effect */
+.project-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 600px) {
+    .container {
+        margin: 30px 15px;
+        padding: 25px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
