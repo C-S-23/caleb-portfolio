@@ -1,86 +1,323 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Caleb's Portfolio</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb Smith — Front-End Developer</title>
+    <meta name="description" content="Caleb Smith — a front-end developer in training, crafting clean, considered web experiences with HTML, CSS, and JavaScript.">
+    <meta name="theme-color" content="#08080c">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<nav class="navbar">
-<h2>Caleb</h2>
-<div>
-<a href="#home">About Me</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-	<div class="container">
 
-<div class="hero">
-<div class="hero" id="home">
-    <h1>Caleb Smith</h1>
-    <p>Beginner web designer learning HTML, CSS, and JavaScript.</p>
-    <a class="button" href="mailto:youremail@gmail.com">Contact Me</a>
-</div>
-   
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
-    <hr>
+    <div class="bg-layer" aria-hidden="true">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grid"></div>
+        <div class="noise"></div>
+    </div>
 
-    <h2>About Me</h2>
-    <p>
-        I have experience in customer service, food service, and optical retail.
-        I'm currently learning web design and coding, focusing on building clean, simple websites.
-    </p>
-<h2 id="skills">Skills</h2>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript Basics</span>
-    <span>Customer Service</span>
-    <span>Problem Solving</span>
-    <span>Communication</span>
-</div>
-    <h2 id="projects">Projects</h2>
+    <nav class="navbar" id="navbar" aria-label="Primary">
+        <a href="#home" class="logo" aria-label="Caleb Smith — home">
+            <span class="logo-mark">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 12 L10 17 L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span class="logo-text">Caleb Smith</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" class="nav-link"><span class="nav-num">01</span>About</a>
+            <a href="#stack" class="nav-link"><span class="nav-num">02</span>Stack</a>
+            <a href="#approach" class="nav-link"><span class="nav-num">03</span>Approach</a>
+            <a href="#projects" class="nav-link"><span class="nav-num">04</span>Work</a>
+            <a href="#contact" class="nav-link"><span class="nav-num">05</span>Contact</a>
+        </div>
+        <a href="resume.pdf" class="nav-cta" target="_blank" rel="noopener">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 L17 7"/><polyline points="9 7 17 7 17 15"/></svg>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+    </nav>
 
-<div class="project-card">
-    <h3>Personal Portfolio Website</h3>
-    <p>
-        A responsive personal website built with HTML and CSS to showcase my background,
-        skills, projects, and contact information.
-    </p>
-</div>
-<div class="project-card">
-    <h3>To-Do List App (Coming Soon)</h3>
-    <p>
-        A simple task management app that will allow users to add, complete,
-        and remove tasks using JavaScript and local storage.
-    </p>
-</div>
-<div class="project-card">
-    <h3>Business Website Mockup</h3>
-    <p>
-        A sample website designed for a small business, focusing on layout,
-        structure, and user-friendly design.
-    </p>
-</div>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-eyebrow reveal">
+                        <span class="status-dot"></span> Available for junior front-end roles
+                    </p>
+                    <h1 class="hero-title reveal">
+                        <span class="hero-line">Building the web,</span>
+                        <span class="hero-line"><em class="serif-italic">one</em> <span class="grad">considered</span></span>
+                        <span class="hero-line">detail at a time.</span>
+                    </h1>
+                    <p class="hero-subtitle reveal">
+                        I'm <strong>Caleb</strong> — a front-end developer in training. I bring years of customer service into every line of code: <em class="serif-italic">listen first, build with care, refine until it feels right.</em>
+                    </p>
+                    <div class="hero-actions reveal">
+                        <a class="btn btn-primary magnetic" href="#projects">
+                            <span>See my work</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                        <a class="btn btn-ghost magnetic" href="mailto:scaleb786@gmail.com">
+                            <span>Get in touch</span>
+                        </a>
+                    </div>
+                </div>
 
-	<h2 id="contact">Contact</h2>
-<p>
-    Email: <a href="mailto:scaleb786@gmail.com">scaleb786@gmail.com</a>
-</p>
+                <aside class="now-card reveal" aria-label="Currently">
+                    <div class="now-header">
+                        <span class="now-label">Now</span>
+                        <span class="now-pulse" aria-hidden="true"></span>
+                    </div>
+                    <p class="now-text">
+                        Sharpening my <strong>JavaScript</strong> fundamentals — DOM, events, and async patterns. Building small, finished things instead of starting big, unfinished ones.
+                    </p>
+                    <div class="now-meta">
+                        <div class="now-meta-row"><span>Based in</span><strong>Arnold, MO</strong></div>
+                        <div class="now-meta-row"><span>Studying</span><strong>IT &amp; Cybersecurity</strong></div>
+                        <div class="now-meta-row"><span>Focus</span><strong>Front-end</strong></div>
+                        <div class="now-meta-row"><span>Status</span><strong class="now-status">Open to work</strong></div>
+                    </div>
+                </aside>
+            </div>
 
-<p>
-    GitHub: <a href="https://github.com/C-S-23" target="_blank">
-        github.com/C-S-23
-    </a>
-</p>
-       	</div
+            <div class="scroll-cue" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-<footer>
-    <p>© 2026 Caleb Smith | Built with HTML and CSS</p>
-</footer>
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>JavaScript</span><span>·</span><span>Flexbox</span><span>·</span><span>Grid</span><span>·</span><span>Responsive design</span><span>·</span><span>Accessibility</span><span>·</span><span>Git</span><span>·</span><span>Figma</span><span>·</span><span>HTML</span><span>·</span><span>CSS</span><span>·</span><span>JavaScript</span><span>·</span><span>Flexbox</span><span>·</span><span>Grid</span><span>·</span><span>Responsive design</span><span>·</span><span>Accessibility</span><span>·</span><span>Git</span><span>·</span><span>Figma</span><span>·</span>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <header class="section-header reveal">
+                <span class="section-tag"><span class="dot"></span>01 — About</span>
+                <h2 class="section-title">A career built on caring about the details.</h2>
+            </header>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="lead">For years I worked in customer service, food service, and optical retail. The work taught me how to listen, how to defuse a frustrated moment, and how to deliver something a person actually wants — not just what they technically asked for.</p>
+                    <p>Now I'm bringing that same care to the web. I'm learning HTML, CSS, and JavaScript with the goal of building sites that feel as considered as a good in-person interaction — accessible, fast, and quietly thoughtful.</p>
+                    <p class="quote"><span class="quote-mark serif-italic">"</span>The best code, like the best service, gets out of the way.</p>
+                </div>
+
+                <div class="about-stats reveal">
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="6" data-suffix="+">0</span>
+                        <span class="stat-label">Years in customer-facing roles</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="3">0</span>
+                        <span class="stat-label">Projects shipped &amp; in progress</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-num" data-target="100" data-suffix="%">0</span>
+                        <span class="stat-label">Committed to the craft</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="stack">
+            <header class="section-header reveal">
+                <span class="section-tag"><span class="dot"></span>02 — Stack</span>
+                <h2 class="section-title">What I'm working with.</h2>
+            </header>
+
+            <div class="stack-grid">
+                <div class="stack-col reveal">
+                    <div class="stack-col-header"><span class="stack-col-num">→</span><h3>Building with</h3></div>
+                    <ul class="stack-list">
+                        <li><span class="stack-item-name">HTML</span><span class="stack-item-note">Semantic, accessible markup</span></li>
+                        <li><span class="stack-item-name">CSS</span><span class="stack-item-note">Flexbox, Grid, responsive layouts</span></li>
+                        <li><span class="stack-item-name">JavaScript</span><span class="stack-item-note">DOM, events, vanilla patterns</span></li>
+                        <li><span class="stack-item-name">Git</span><span class="stack-item-note">Version control basics</span></li>
+                    </ul>
+                </div>
+
+                <div class="stack-col reveal" data-delay="80">
+                    <div class="stack-col-header"><span class="stack-col-num">→</span><h3>Learning next</h3></div>
+                    <ul class="stack-list">
+                        <li><span class="stack-item-name">React</span><span class="stack-item-note">Components, hooks, state</span></li>
+                        <li><span class="stack-item-name">TypeScript</span><span class="stack-item-note">Types as a thinking tool</span></li>
+                        <li><span class="stack-item-name">Tailwind CSS</span><span class="stack-item-note">Utility-first styling</span></li>
+                        <li><span class="stack-item-name">Accessibility</span><span class="stack-item-note">ARIA, focus, contrast</span></li>
+                    </ul>
+                </div>
+
+                <div class="stack-col reveal" data-delay="160">
+                    <div class="stack-col-header"><span class="stack-col-num">→</span><h3>Bringing in</h3></div>
+                    <ul class="stack-list">
+                        <li><span class="stack-item-name">Communication</span><span class="stack-item-note">Clear, kind, direct</span></li>
+                        <li><span class="stack-item-name">Problem-solving</span><span class="stack-item-note">Calm under pressure</span></li>
+                        <li><span class="stack-item-name">Customer empathy</span><span class="stack-item-note">Years of frontline reps</span></li>
+                        <li><span class="stack-item-name">Reliability</span><span class="stack-item-note">Show up. Follow through.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="approach">
+            <header class="section-header reveal">
+                <span class="section-tag"><span class="dot"></span>03 — Approach</span>
+                <h2 class="section-title">How I work, in three moves.</h2>
+            </header>
+
+            <div class="approach-grid">
+                <article class="approach-card reveal">
+                    <div class="approach-num">01</div>
+                    <h3>Listen</h3>
+                    <p>The frontline taught me to slow down and hear what people actually need — not what they first say. Same goes for a brief, a bug, or a design.</p>
+                </article>
+                <article class="approach-card reveal" data-delay="80">
+                    <div class="approach-num">02</div>
+                    <h3>Build</h3>
+                    <p>Clean, semantic HTML. CSS that respects the user's device. JavaScript that does only what it needs to. No clever for the sake of clever.</p>
+                </article>
+                <article class="approach-card reveal" data-delay="160">
+                    <div class="approach-num">03</div>
+                    <h3>Refine</h3>
+                    <p>Ship, then sand. Tighten spacing, fix the tab order, polish the edge cases. Care shows up in the second pass, not the first.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <header class="section-header reveal">
+                <span class="section-tag"><span class="dot"></span>04 — Selected work</span>
+                <h2 class="section-title">Things I've built &amp; am building.</h2>
+            </header>
+
+            <div class="projects">
+                <article class="project-card reveal">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="proj-window">
+                            <div class="proj-dots"><span></span><span></span><span></span></div>
+                            <div class="proj-bars">
+                                <div class="proj-bar w70"></div>
+                                <div class="proj-bar w40"></div>
+                                <div class="proj-bar w55"></div>
+                                <div class="proj-bar w30"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-tag tag-live">Live</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>Personal Portfolio</h3>
+                        <p>The site you're reading — a responsive personal site built from scratch. Focus on typography, hierarchy, and small motion that earns its keep.</p>
+                        <div class="project-stack"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                        <a class="project-link" href="https://c-s-23.github.io/caleb-portfolio/" target="_blank" rel="noopener" aria-label="View live Personal Portfolio">
+                            View live <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 L17 7"/><polyline points="9 7 17 7 17 15"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-delay="80">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="proj-todos">
+                            <div class="proj-todo done"><span class="check">✓</span><span class="line"></span></div>
+                            <div class="proj-todo done"><span class="check">✓</span><span class="line short"></span></div>
+                            <div class="proj-todo"><span class="check empty"></span><span class="line med"></span></div>
+                            <div class="proj-todo"><span class="check empty"></span><span class="line"></span></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-tag tag-progress">In progress</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>To-Do List App</h3>
+                        <p>A small task manager — add, complete, remove. A focused way to practice JavaScript fundamentals and localStorage persistence end-to-end.</p>
+                        <div class="project-stack"><span>JavaScript</span><span>LocalStorage</span><span>DOM</span></div>
+                        <a class="project-link" href="#" aria-label="To-Do List App — coming soon">
+                            Coming soon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-delay="160">
+                    <div class="project-visual" aria-hidden="true">
+                        <div class="proj-mock">
+                            <div class="proj-mock-head"></div>
+                            <div class="proj-mock-hero"></div>
+                            <div class="proj-mock-grid"><div></div><div></div><div></div></div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-tag tag-concept">Concept</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3>Small-Business Site</h3>
+                        <p>A mock site for a local business — practicing layout, hierarchy, and the small choices that make a brochure site feel trustworthy.</p>
+                        <div class="project-stack"><span>HTML</span><span>CSS</span><span>Design</span></div>
+                        <a class="project-link" href="#" aria-label="Small-Business Site — coming soon">
+                            Coming soon <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-contact" id="contact">
+            <div class="contact-card reveal">
+                <span class="section-tag center"><span class="dot"></span>05 — Contact</span>
+                <h2 class="contact-title">Let's build <em class="serif-italic">something</em><br>worth keeping.</h2>
+                <p class="contact-sub">Open to junior front-end roles, freelance projects, and friendly conversations about the craft of the web. I read every message.</p>
+                <div class="contact-links">
+                    <a class="btn btn-primary magnetic" href="mailto:scaleb786@gmail.com">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>scaleb786@gmail.com</span>
+                    </a>
+                    <a class="btn btn-ghost magnetic" href="https://github.com/C-S-23" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-1-.02-1.96-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.3-.51-1.48.11-3.08 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.78 0c2.21-1.49 3.18-1.18 3.18-1.18.62 1.6.23 2.78.11 3.08.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.68.41.36.77 1.06.77 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.21.66.8.55C20.21 21.4 23.5 17.1 23.5 12.02 23.5 5.74 18.27.5 12 .5z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a class="btn btn-ghost magnetic" href="resume.pdf" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                        <span>Resume</span>
+                    </a>
+                </div>
+                <p class="contact-fineprint">Usually replies within a day.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-mark">CS</span>
+                <span>Caleb Smith</span>
+            </div>
+            <p class="footer-meta">© 2026 — Designed &amp; built by hand.</p>
+            <div class="footer-links">
+                <a href="mailto:scaleb786@gmail.com">Email</a>
+                <a href="https://github.com/C-S-23" target="_blank" rel="noopener">GitHub</a>
+                <a href="#home">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
